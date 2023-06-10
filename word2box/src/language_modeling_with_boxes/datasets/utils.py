@@ -50,11 +50,11 @@ def load_vocab(data_dir: Union[str, Path]):
                 token, frequency = line.split()
                 vocab_stoi[token] = int(token_id)
                 vocab_freq[token] = int(frequency)
-    elif path.isfile(data_dir + "vocab_stoi.json") and path.isfile(
+    elif path.isfile(data_dir + "/vocab_stoi.json") and path.isfile(
         data_dir + "vocab_freq.json"
     ):
-        vocab_stoi = json.load(open(data_dir + "vocab_stoi.json", "r"))
-        vocab_freq = json.load(open(data_dir + "vocab_freq.json", "r"))
+        vocab_stoi = json.load(open(data_dir + "/vocab_stoi.json", "r"))
+        vocab_freq = json.load(open(data_dir + "/vocab_freq.json", "r"))
     else:
         TEXT = torchtext.data.Field()
         train_split = torchtext.datasets.LanguageModelingDataset.splits(
@@ -65,8 +65,8 @@ def load_vocab(data_dir: Union[str, Path]):
             text_field=TEXT,
         )
         TEXT.build_vocab(train_split[0])
-        vocab_stoi_file = open(data_dir + "vocab_stoi.json", "w")
-        vocab_freq_file = open(data_dir + "vocab_freq.json", "w")
+        vocab_stoi_file = open(data_dir + "/vocab_stoi.json", "w")
+        vocab_freq_file = open(data_dir + "/vocab_freq.json", "w")
         json.dump(TEXT.vocab.stoi, vocab_stoi_file)
         json.dump(TEXT.vocab.freqs, vocab_freq_file)
         vocab_stoi_file.close()
@@ -118,7 +118,7 @@ def get_iter_on_device(
     eos_mask,
 ):
     print("Loading VOCAB & Tokenized Training files ...")
-    vocab_stoi, vocab_freq = load_vocab("./data/" + dataset)
+    vocab_stoi, vocab_freq = load_vocab("./data/" + dataset + '/')
     train_tokenized = load_train_data_as_tensor(dataset)
 
     ## Create Vocabulary properties

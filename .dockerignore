@@ -1,0 +1,4 @@
+*.zip
+./h_and_m_data/**/*
+./word2box/data/**/*
+./word2box/checkpoint/**/*

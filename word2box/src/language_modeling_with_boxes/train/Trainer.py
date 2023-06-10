@@ -133,6 +133,7 @@ class TrainerWordSimilarity(Trainer):
         self, model, num_epochs=100, path="./checkpoints", save_model=False
     ):
         ## Setting up the optimizers
+        Path(path).mkdir(parents=True, exist_ok=True)
         parameters = filter(lambda p: p.requires_grad, model.parameters())
         optimizer = torch.optim.Adam(params=parameters, lr=self.lr)
         metric = {}

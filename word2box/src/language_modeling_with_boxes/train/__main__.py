@@ -84,6 +84,7 @@ class IntOrPercent(click.ParamType):
             "wackypedia_lemma",
             "wikipedia_large",
             "wikipedia_lemma_large",
+            "h_and_m"
         ]
     ),
     default="ptb",

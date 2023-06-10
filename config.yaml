@@ -1,0 +1,13 @@
+data_dir: /workspace/h_and_m_data
+vocab_dir: /workspace/word2box/data/h_and_m
+topk: 12
+max_seq: 100
+
+model_config:
+  batch_size: 4096
+  embedding_dim: 64
+  int_temp: 1.9678289474987882
+  n_gram: 1
+  vol_temp: 0.33243242379830407
+  box_type: BoxTensor
+  ckpt_path: '/workspace/word2box/checkpoint/model.ckpt'
