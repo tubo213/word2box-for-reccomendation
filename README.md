@@ -8,7 +8,8 @@
 
 ### Demo
 
-[streamlit-app-2023-06-12-00-06-75.webm](https://github.com/tubo213/word2box-for-reccomendation/assets/74698040/7007c052-77e3-460e-abd5-5986ebb439b1)
+[streamlit-app-2023-06-12-02-06-38.webm](https://github.com/tubo213/word2box-for-reccomendation/assets/74698040/aae424da-89ce-4483-b88f-2846b1e28bf6)
+
 
 
 ### Build
